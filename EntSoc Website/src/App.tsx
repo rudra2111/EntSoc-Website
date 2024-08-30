@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <Navbar></Navbar>
-      <Box pt= '6.875rem'>
+      <Box pt= '100px'>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about-us" element={<AboutUs />} />

@@ -25,7 +25,7 @@ const Navbar = () => {
       zIndex="1000"
     >
       <Flex align="center" mr={5}>
-        <Image src="/path-to-your-logo.png" alt="Logo" boxSize="30px" />
+        <Image src="/EntSoc_Logo.png" alt="Logo" boxSize="30px" />
       </Flex>
 
       <Box display={{ base: 'block', md: 'flex' }} width={{ base: 'full', md: 'auto' }} alignItems="center">
