@@ -1,4 +1,4 @@
-import { Box, VStack, Text, Button, SimpleGrid, Image, Link } from '@chakra-ui/react';
+import { Box, VStack, Text, Button, SimpleGrid, Image, Link, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, Flex } from '@chakra-ui/react';
 import Footer from '../Components/Footer';
 
 export default function HomePage() {
@@ -101,18 +101,6 @@ export default function HomePage() {
             linkedin: "https://www.linkedin.com/in/aislingekelly/",
         },
         {
-            name: "Anastasia McMillan",
-            position: "Social Secretary",
-            image: "/Anastasia.png",
-            linkedin: "https://www.linkedin.com/in/anastasia-mcmillan/",
-        },
-        {
-            name: "Diana Georgievskaya",
-            position: "Social Secretary",
-            image: "/Diana.png",
-            linkedin: "https://www.linkedin.com/in/diana-georgievskaya/",
-        },
-        {
             name: "Palak Jain",
             position: "Co-Head of Marketing",
             image: "/Palak.jpeg",
@@ -124,10 +112,22 @@ export default function HomePage() {
             image: "/Hermi.png",
             linkedin: "https://www.linkedin.com/in/ermioni-vasileiadou-b303b4314/",
         },
-
+        {
+            name: "Diana Georgievskaya",
+            position: "Social Secretary",
+            image: "/Diana.png",
+            linkedin: "https://www.linkedin.com/in/diana-georgievskaya/",
+        },
+        {
+            name: "Anastasia McMillan",
+            position: "Social Secretary",
+            image: "/Anastasia.png",
+            linkedin: "https://www.linkedin.com/in/anastasia-mcmillan/",
+        }
     ];
 
     return (
+
         <Box>
             {/* Background Image Section */}
             <Box
@@ -170,26 +170,103 @@ export default function HomePage() {
             </Box>
 
             {/* "Who Are We?" Section */}
-            <Box 
-                p={{ base: 6, md: 10 }}  
-                bg="gray.100"  
-                textAlign="center"
-                mx="auto"  
-                mt={12}  
-                borderRadius="md"  
-                boxShadow="lg"  
-                maxW="4xl"
-            >
-                <Text fontSize="2xl" fontWeight="bold" mb={6}>Who Are We?</Text>  
-                <Text fontSize="lg" lineHeight="1.8">
-                    At EntSoc, we unite a diverse group of driven students who share a passion for entrepreneurship. We’re not just a society; we’re a community that fosters creativity, cultivates business knowledge, and builds the confidence needed to bring entrepreneurial visions to life.
-                </Text>
-                <Text fontSize="lg" mt={6} lineHeight="1.8">
-                    Through impactful events, competitions, and collaborations, we’ve made our mark, hosting over 60 speakers from 18 countries and 200+ competition participants in past years. We collaborate with 7 Scottish universities, support 4 local businesses, and contribute to charity, raising £1,500 annually for partner organizations.
-                </Text>
-                <Text fontSize="lg" mt={6} lineHeight="1.8">
-                    Our goal? To offer high-quality learning and networking experiences that equip our members with the skills and confidence to make real-world impact. Ready to make your mark? Join us for another year of impact and innovation.
-                </Text>
+            <Box>
+                <Box 
+                    p={{ base: 6, md: 10 }}  
+                    bg="gray.100"  
+                    textAlign="center"
+                    mt={12}  
+                    borderRadius="md"  
+                    boxShadow="lg"  
+                    maxW="6xl"  
+                    mx="auto"
+                >
+                    <Flex direction={{ base: 'column', md: 'row' }} align="flex-start" justify="center">
+                        <Box flex="1" textAlign="left" p={{ base: 4, md: 8 }}>
+                            <Text fontSize="2xl" fontWeight="bold" mb={6}>Who Are We?</Text>
+                            <Text fontSize="lg" lineHeight="1.8" mb={4}>
+                                At EntSoc, we unite a diverse group of driven students who share a passion for entrepreneurship. We’re not just a society; we’re a community that fosters creativity, cultivates business knowledge, and builds the confidence needed to bring entrepreneurial visions to life.
+                            </Text>
+                            <Text fontSize="lg" lineHeight="1.8" mb={4}>
+                                Through impactful events, competitions, and collaborations, we’ve made our mark, hosting over 60 speakers from 18 countries and 200+ competition participants in past years. We collaborate with 7 Scottish universities, support 4 local businesses, and contribute to charity, raising £1,500 annually for partner organizations.
+                            </Text>
+                            <Text fontSize="lg" lineHeight="1.8" mb={4}>
+                                Our goal? To offer high-quality learning and networking experiences that equip our members with the skills and confidence to make real-world impact.
+                            </Text>
+                        </Box>
+
+                        <Box flex="1" maxW={{ base: '100%', md: '400px' }} p={{ base: 4, md: 8 }}>
+                            <Accordion allowToggle>
+                                <AccordionItem>
+                                    <AccordionButton>
+                                        <Box flex="1" textAlign="left" fontWeight='bold'>
+                                            Speaker Events
+                                        </Box>
+                                        <AccordionIcon />
+                                    </AccordionButton>
+                                    <AccordionPanel pb={4} textAlign="left" >
+                                        Learn from world-class entrepreneurs, innovators, and thought leaders through a series of talks and workshops designed to inspire and educate.
+
+                                    </AccordionPanel>
+                                </AccordionItem>
+
+                                <AccordionItem>
+                                    <AccordionButton>
+                                        <Box flex="1" textAlign="left" fontWeight='bold'>
+                                            Venture Capital Programme (VCP)
+                                        </Box>
+                                        <AccordionIcon />
+                                    </AccordionButton>
+                                    <AccordionPanel pb={4} textAlign="left" >
+                                        This 7-week program provides aspiring entrepreneurs with hands-on experience in building a startup through workshops, offering insights into funding, investment strategy, and startup scaling.
+                                    </AccordionPanel>
+                                </AccordionItem>
+
+                                <AccordionItem>
+                                    <AccordionButton>
+                                        <Box flex="1" textAlign="left" fontWeight='bold'>
+                                            Scottish Entrepreneurs Network (SEN) Pitching Competition
+                                        </Box>
+                                        <AccordionIcon />
+                                    </AccordionButton>
+                                    <AccordionPanel pb={4} textAlign="left" >
+                                        The SEN competition is designed to empower university students to develop innovative, tech-driven solutions across the food, healthcare, and sports industries with a focus on creating a positive impact on society. Participants are encouraged to address real-world problems, using technology to enhance sustainability, health, well-being, and overall societal benefit.
+                                    </AccordionPanel>
+                                </AccordionItem>
+
+                                <AccordionItem>
+                                    <AccordionButton>
+                                        <Box flex="1" textAlign="left" fontWeight='bold'>
+                                            Foundry
+                                        </Box>
+                                        <AccordionIcon />
+                                    </AccordionButton>
+                                    <AccordionPanel pb={4} textAlign="left" >
+                                        Foundry is our dedicated community of entrepreneurs, providing a space for founders at any stage to connect, learn, and grow together. It’s where ideas are transformed into action, with support from peers and mentors alike.
+                                    </AccordionPanel>
+                                </AccordionItem>
+
+                                <AccordionItem>
+                                    <AccordionButton>
+                                        <Box flex="1" textAlign="left" fontWeight='bold'>
+                                            REACH
+                                        </Box>
+                                        <AccordionIcon />
+                                    </AccordionButton>
+                                    <AccordionPanel pb={4} textAlign="left" >
+                                        An initiative supporting local businesses through our Savers Card, and raising funds for charity through Reach events. These cards offer discounts at our partner establishments around Edinburgh, encouraging student engagement with local businesses, while the funds raised by Reach events go directly to a charity partner.
+                                    </AccordionPanel>
+                                </AccordionItem>
+                            </Accordion>
+                        </Box>
+
+                    </Flex>
+                    
+                    {/* Ready to make your mark section */}
+                    <Text fontWeight="bold" fontSize="lg" lineHeight="1.8" mt={8} textAlign="center">
+                        Ready to make your mark? Join us for another year of impact and innovation.
+                    </Text>
+                </Box>
             </Box>
 
             {/* "Our Team" Section */}
@@ -198,11 +275,11 @@ export default function HomePage() {
                 textAlign="center"
                 mx="auto"  
                 mt={12}  
-                maxW="5xl"
+                maxW="90%"  
             >
                 <Text fontSize="2xl" fontWeight="bold" mb={6}>Our Team</Text>
 
-                <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
+                <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10} justifyContent="center" placeItems='center'>
                     {committeeMembers.map((member) => (
                         <VStack key={member.name} spacing={4} align="center">
                             <Image
@@ -224,5 +301,6 @@ export default function HomePage() {
 
             <Footer />
         </Box>
+
     );
 }
