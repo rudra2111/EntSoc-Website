@@ -37,7 +37,7 @@ export default function HomePage() {
         {
             name: "Karney Morgan-Cheng",
             position: "Vice-Chairperson",
-            image: "/",
+            image: "/Karney.png",
             linkedin: "https://www.linkedin.com/in/karney-morgan-cheng-8790711aa/",
         },
         {
@@ -169,8 +169,8 @@ export default function HomePage() {
                 </VStack>
             </Box>
 
-            {/* "Who Are We?" Section */}
-            <Box>
+
+            <Box display='flex' alignItems='center' justifyContent='center' w='100%' p={8}>
                 <Box 
                     p={{ base: 6, md: 10 }}  
                     bg="gray.100"  
@@ -180,8 +180,9 @@ export default function HomePage() {
                     boxShadow="lg"  
                     maxW="6xl"  
                     mx="auto"
+                    alignContent='center'
                 >
-                    <Flex direction={{ base: 'column', md: 'row' }} align="flex-start" justify="center">
+                    <Flex direction={{ base: 'column', md: 'row' }}  justify="center">
                         <Box flex="1" textAlign="left" p={{ base: 4, md: 8 }}>
                             <Text fontSize="2xl" fontWeight="bold" mb={6}>Who Are We?</Text>
                             <Text fontSize="lg" lineHeight="1.8" mb={4}>
@@ -262,24 +263,25 @@ export default function HomePage() {
 
                     </Flex>
                     
-                    {/* Ready to make your mark section */}
+ 
                     <Text fontWeight="bold" fontSize="lg" lineHeight="1.8" mt={8} textAlign="center">
                         Ready to make your mark? Join us for another year of impact and innovation.
                     </Text>
                 </Box>
             </Box>
 
-            {/* "Our Team" Section */}
+
             <Box 
                 p={{ base: 6, md: 10 }}  
                 textAlign="center"
                 mx="auto"  
                 mt={12}  
                 maxW="90%"  
+
             >
                 <Text fontSize="2xl" fontWeight="bold" mb={6}>Our Team</Text>
 
-                <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10} justifyContent="center" placeItems='center'>
+                <SimpleGrid columns={{ base: 1, sm: 2,  md: 3 }} spacing={10} justifyContent="center" >
                     {committeeMembers.map((member) => (
                         <VStack key={member.name} spacing={4} align="center">
                             <Image

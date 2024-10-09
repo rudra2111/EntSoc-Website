@@ -87,9 +87,9 @@ const ContactUs = () => {
             <FormControl isRequired>
               <FormLabel>What's the nature of your enquiry?</FormLabel>
               <Select name="enquiryType" placeholder="Select an option" value={formData.enquiryType} onChange={handleChange}>
-                <option value="general">General</option>
-                <option value="support">Support</option>
-                <option value="sales">Sales</option>
+                <option value="General">General</option>
+                <option value="Sponsorship">Sponsorship</option>
+                <option value="Speaker Enquiry">Speaker Enquiry</option>
               </Select>
             </FormControl>
 
