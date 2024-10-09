@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { Box, Flex, Image, Link, Icon, IconButton, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerBody, VStack } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
-import { NavLink as RouterNavLink } from 'react-router-dom';  // Importing NavLink for navigation
+import { NavLink as RouterNavLink } from 'react-router-dom';  // Importing NavLink for internal navigation
 import { FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 const navItems = [
   { path: "/", label: "Home" },
   { path: "/about-us", label: "About Us" },
-  { path: "/events", label: "Events" },
+  // Events will now link to an external website
+  { path: "https://www.eusa.ed.ac.uk/activities/view/edinburghentrepreneurs?ref=conversationalainews.com", label: "Events", isExternal: true },
   { path: "/contact-us", label: "Contact Us" },
 ];
 
@@ -59,20 +60,34 @@ const Navbar = () => {
         {/* Navigation Links for Desktop */}
         <Flex display={{ base: 'none', md: 'flex' }} align="center" flexGrow={1} justify="center">
           {navItems.map((item) => (
-            <RouterNavLink 
-              to={item.path} 
-              key={item.label} 
-              style={({ isActive }) => ({
-                padding: '1rem',
-                borderBottom: isActive ? '2px solid #20265E' : 'none',
-                color: isActive ? "#20265E" : 'black',
-                textDecoration: 'none',
-                transition: 'border-bottom 0.3s ease',
-                margin: '0 10px',
-              })}
-            >
-              {item.label}
-            </RouterNavLink>
+            item.isExternal ? (
+              <Link
+                href={item.path}
+                key={item.label}
+                isExternal
+                p="1rem"
+                color="black"
+                _hover={{ textDecoration: 'none', borderBottom: '2px solid #20265E' }}
+                margin="0 10px"
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <RouterNavLink 
+                to={item.path} 
+                key={item.label} 
+                style={({ isActive }) => ({
+                  padding: '1rem',
+                  borderBottom: isActive ? '2px solid #20265E' : 'none',
+                  color: isActive ? "#20265E" : 'black',
+                  textDecoration: 'none',
+                  transition: 'border-bottom 0.3s ease',
+                  margin: '0 10px',
+                })}
+              >
+                {item.label}
+              </RouterNavLink>
+            )
           ))}
         </Flex>
 
@@ -102,14 +117,27 @@ const Navbar = () => {
               fontWeight="bold"
             >
               {navItems.map((item) => (
-                <RouterNavLink 
-                  to={item.path} 
-                  key={item.label} 
-                  onClick={closeDrawer}  // Close the drawer when a link is clicked
-                  style={{ textDecoration: 'none', color: '#20265E' }}
-                >
-                  {item.label}
-                </RouterNavLink>
+                item.isExternal ? (
+                  <Link
+                    href={item.path}
+                    key={item.label}
+                    isExternal
+                    fontSize="2xl"
+                    color="#20265E"
+                    onClick={closeDrawer}
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <RouterNavLink 
+                    to={item.path} 
+                    key={item.label} 
+                    onClick={closeDrawer}  // Close the drawer when a link is clicked
+                    style={{ textDecoration: 'none', color: '#20265E' }}
+                  >
+                    {item.label}
+                  </RouterNavLink>
+                )
               ))}
 
               {/* Social Media Icons for Mobile (At the bottom) */}

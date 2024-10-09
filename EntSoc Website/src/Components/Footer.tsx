@@ -17,13 +17,13 @@ const navItems: NavItem[] = [
 ];
 
 const Footer: React.FC = () => {
-  const location = useLocation(); // Get the current path
+  const location = useLocation(); 
 
   // Filter out the current page from the footer links
   const footerNavItems = navItems.filter((item) => item.path !== location.pathname);
 
   return (
-    <Box as="footer" py={10} textAlign="center" bg="white" mt="auto">
+    <Box as="footer" py={10} textAlign="center" bg="white" mt="auto" color="#20265E">
       {/* Social Media Icons */}
       <HStack justify="center" spacing={6} mb={4}>
         <Link href="https://www.instagram.com/edentsoc/" isExternal>

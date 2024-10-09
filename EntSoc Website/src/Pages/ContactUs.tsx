@@ -49,15 +49,14 @@ const ContactUs = () => {
   };
 
   return (
-    <Box>
-      {/* Adjusting the top margin for mobile and desktop separately */}
-      <Box mt={{ base: "4rem", md: "8rem" }} mb="6" textAlign="center">
+    <Box display="flex" justifyContent="center" alignItems="center" minH="100vh" p={4}>
+      <Box mt={{ base: "4rem", md: "8rem" }} mb="6" maxW="600px" width="100%" textAlign="center">
         <Heading as="h1" size="xl" mb="4">
           Contact Us
         </Heading>
-        <Box as="form" onSubmit={handleSubmit} p={6} maxW="600px" mx="auto">
+        <Box as="form" onSubmit={handleSubmit} p={6} boxShadow="lg" borderRadius="md" bg="white" width="100%">
           <VStack spacing={4}>
-            {/* First Name and Last Name */}
+            {/* Form controls */}
             <FormControl isRequired>
               <FormLabel>First name</FormLabel>
               <Input name="firstName" placeholder="First name" value={formData.firstName} onChange={handleChange} />
@@ -67,7 +66,6 @@ const ContactUs = () => {
               <Input name="lastName" placeholder="Last name" value={formData.lastName} onChange={handleChange} />
             </FormControl>
 
-            {/* Company Name and Email */}
             <FormControl>
               <FormLabel>Company name</FormLabel>
               <Input name="companyName" placeholder="Company name" value={formData.companyName} onChange={handleChange} />
@@ -77,7 +75,6 @@ const ContactUs = () => {
               <Input type="email" name="email" placeholder="Email address" value={formData.email} onChange={handleChange} />
             </FormControl>
 
-            {/* Phone and Subject */}
             <FormControl>
               <FormLabel>Phone Number</FormLabel>
               <Input name="phone" placeholder="Phone Number" value={formData.phone} onChange={handleChange} />
@@ -87,7 +84,6 @@ const ContactUs = () => {
               <Input name="subject" placeholder="Subject" value={formData.subject} onChange={handleChange} />
             </FormControl>
 
-            {/* Enquiry Type */}
             <FormControl isRequired>
               <FormLabel>What's the nature of your enquiry?</FormLabel>
               <Select name="enquiryType" placeholder="Select an option" value={formData.enquiryType} onChange={handleChange}>
@@ -97,20 +93,17 @@ const ContactUs = () => {
               </Select>
             </FormControl>
 
-            {/* Message */}
             <FormControl isRequired>
               <FormLabel>Message</FormLabel>
               <Textarea name="message" placeholder="Enter message" value={formData.message} onChange={handleChange} />
             </FormControl>
 
-            {/* Terms and Conditions */}
             <FormControl isRequired>
               <Checkbox name="termsAccepted" isChecked={formData.termsAccepted} onChange={handleChange}>
                 I have read and accepted the <Link href="/terms">Terms & Conditions</Link> and the <Link href="/privacy">Privacy notice</Link>.
               </Checkbox>
             </FormControl>
 
-            {/* Submit Button */}
             <Button type="submit" colorScheme="blue" size="lg" w="full">
               Submit
             </Button>
@@ -118,6 +111,7 @@ const ContactUs = () => {
         </Box>
       </Box>
     </Box>
+
   );
 };
 
