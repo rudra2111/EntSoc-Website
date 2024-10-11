@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Flex, Text, VStack, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon } from '@chakra-ui/react';
+import { Box, Flex, Text, Image } from '@chakra-ui/react';
 import Footer from '../Components/Footer';
 
 const AboutUs = () => {
@@ -7,27 +7,32 @@ const AboutUs = () => {
     {
       title: "Speaker Events",
       description:
-        "Our Speaker Events series offers unparalleled access to the minds of world-class entrepreneurs, innovators, and thought leaders. These talks and workshops are designed to inspire and educate students on the realities of entrepreneurship. From learning how to launch a business, scale a startup, or navigate the challenges of today’s market, you’ll hear firsthand experiences and actionable insights from individuals who have successfully charted their own entrepreneurial journeys.",
+        "Our Speaker Events series offers unparalleled access to the minds of world-class entrepreneurs, innovators, and thought leaders. These talks and workshops are designed to inspire and educate students on the realities of entrepreneurship. From learning how to launch a business, scale a startup, or navigate the challenges of today’s market, you’ll hear firsthand experiences and actionable insights from individuals who have successfully charted their own entrepreneurial journeys. The events provide an invaluable platform for networking, learning, and gaining inspiration to take your own venture to the next level.",
+      image: "/Speakers.png",  
     },
     {
       title: "Venture Capital Program (VCP)",
       description:
-        "The Venture Capital Program (VCP) is a comprehensive 7-week program designed for aspiring entrepreneurs looking to get hands-on experience in building a startup from the ground up. Through a series of workshops, you’ll dive deep into essential topics such as startup funding, crafting a strong business plan, investment strategies, and scaling operations. Participants are guided by industry experts and investors.",
+        "The Venture Capital Program (VCP) is a comprehensive 7-week program designed for aspiring entrepreneurs looking to get hands-on experience in building a startup from the ground up. Through a series of workshops, you’ll dive deep into essential topics such as startup funding, crafting a strong business plan, investment strategies, and scaling operations. Participants are guided by industry experts and investors, who provide feedback and mentorship throughout the process. By the end of the program, you’ll walk away with critical skills and insights to help bring your startup vision to life and secure investment opportunities.",
+      image: "/VCP.jpg",  // Replace with actual image path
     },
     {
       title: "Scottish Entrepreneurs Network (SEN) Pitching Competition",
       description:
-        "The Scottish Entrepreneurs Network (SEN) Pitching Competition is a dynamic initiative that challenges students at our partnered universities across Scotland to develop innovative, tech-driven solutions in key industries such as food, healthcare, and sports. This competition goes beyond just pitching—it encourages participants to focus on making a positive societal impact.",
+        "The Scottish Entrepreneurs Network (SEN) Pitching Competition is a dynamic initiative that challenges students at our partnered universities across Scotland to develop innovative, tech-driven solutions in key industries such as food, healthcare, and sports. This competition goes beyond just pitching—it encourages participants to focus on making a positive societal impact. By tackling real-world problems on a chosen theme, students are tasked with creating solutions that improve sustainability, health, well-being, and overall quality of life. ",
+      image: "/SEN.jpg",  // Replace with actual image path
     },
     {
       title: "Foundry",
       description:
-        "Foundry is EntSoc’s vibrant community of entrepreneurs at all stages of their journey, offering a space where founders can connect, learn, and grow together. Whether you’re just starting out with a fresh idea or you’ve already launched your business, Foundry provides the resources, mentorship, and support to help you succeed.",
+        "Foundry is EntSoc’s vibrant community of entrepreneurs at all stages of their journey, offering a space where founders can connect, learn, and grow together. Whether you’re just starting out with a fresh idea or you’ve already launched your business, Foundry provides the resources, mentorship, and support to help you succeed. Members benefit from access to workshops, peer-to-peer learning sessions, and networking opportunities with fellow entrepreneurs and industry experts. Foundry is more than just a community—it’s a place where entrepreneurial ideas are transformed into action, and where members can collaborate, share experiences, and gain the practical skills needed to advance their ventures.",
+      image: "/Foundry.JPG",  // Replace with actual image path
     },
     {
-      title: "Reach",
+      title: "REACH",
       description:
-        "Reach is EntSoc’s initiative designed to strengthen ties between students and local businesses while raising funds for charity. At the heart of Reach is our Savers Card, which offers exclusive discounts at a variety of partner establishments around Edinburgh. These discounts encourage students to engage with and support local businesses.",
+        "Reach is EntSoc’s initiative designed to strengthen ties between students and local businesses while raising funds for charity. At the heart of Reach is our Savers Card, which offers exclusive discounts at a variety of partner establishments around Edinburgh. These discounts encourage students to engage with and support local businesses. Additionally, Reach hosts events where funds are raised directly for a chosen charity, helping to make a positive social impact. Through this initiative, we’re not only supporting the local economy but also empowering students to contribute to meaningful causes through their participation in our events.",
+      image: "/REACH.jpg",  // Replace with actual image path
     },
   ];
 
@@ -37,11 +42,10 @@ const AboutUs = () => {
       mx="auto"
       p={{ base: 4, md: 8 }}
       my={8}
-      mt={16} // Add more top margin to move the content down
+      mt={16} 
     >
-      {/* Flexbox for two columns */}
       <Flex direction={{ base: 'column', md: 'row' }}>
-        {/* Left column with the heading */}
+
         <Box flex="1" pr={{ md: 10 }} mb={{ base: 4, md: 0 }}>
           <Text
             fontSize={{ base: '3xl', md: '4xl' }}
@@ -52,7 +56,6 @@ const AboutUs = () => {
           </Text>
         </Box>
 
-        {/* Right column with the mission text */}
         <Box flex="2">
           <Text fontSize="lg" lineHeight="1.8" textAlign="left" color="gray.700">
             We want to equip our members with the best opportunities to:
@@ -76,7 +79,6 @@ const AboutUs = () => {
         </Box>
       </Flex>
 
-      {/* Sections for each initiative */}
       {sections.map((section, index) => (
         <Flex
           key={section.title}
@@ -84,7 +86,7 @@ const AboutUs = () => {
           my={16}
           alignItems="center"
         >
-          {/* Section Title and Description */}
+
           <Box flex="1" p={{ base: 4, md: 8 }}>
             <Text fontSize="2xl" fontWeight="bold" mb={4}>
               {section.title}
@@ -94,19 +96,16 @@ const AboutUs = () => {
             </Text>
           </Box>
 
-          {/* Image or Illustration (Placeholder for now) */}
+
           <Box flex="1" p={{ base: 4, md: 8 }} display="flex" justifyContent="center">
-            <Box
-              width="100%"
-              height="250px"
-              bg="gray.200"
+            <Image
+              src={section.image}
+              alt={section.title}
               borderRadius="lg"
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-            >
-              <Text fontSize="xl" color="gray.500">Image Placeholder</Text>
-            </Box>
+              objectFit="cover"
+              width="100%"
+              maxHeight="300px"  
+            />
           </Box>
         </Flex>
       ))}

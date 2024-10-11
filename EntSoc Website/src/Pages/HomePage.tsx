@@ -41,7 +41,7 @@ export default function HomePage() {
             linkedin: "https://www.linkedin.com/in/karney-morgan-cheng-8790711aa/",
         },
         {
-            name: "Kashvi Chabra",
+            name: "Kashvi Chabbra",
             position: "Head of Speakers",
             image: "/Kashvi.png",
             linkedin: "https://www.linkedin.com/in/kashvi-chabbra/",
@@ -79,7 +79,7 @@ export default function HomePage() {
         {
             name: "Shifa Ali",
             position: "Community Manager",
-            image: "/",
+            image: "/Shifa.png",
             linkedin: "https://www.linkedin.com/in/shifa27/",
         },
         {
@@ -97,7 +97,7 @@ export default function HomePage() {
         {
             name: "Aisling Kelly",
             position: "Corporate Sponsorship Coordinator",
-            image: "/Aisling.png",
+            image: "/Aisling.jpeg",
             linkedin: "https://www.linkedin.com/in/aislingekelly/",
         },
         {
@@ -129,7 +129,6 @@ export default function HomePage() {
     return (
 
         <Box>
-            {/* Background Image Section */}
             <Box
                 position="relative"
                 minHeight={{ base: "100vh", md: "100vh" }}  
@@ -279,9 +278,9 @@ export default function HomePage() {
                 maxW="90%"  
 
             >
-                <Text fontSize="2xl" fontWeight="bold" mb={6}>Our Team</Text>
+                <Text fontSize="2xl" fontWeight="bold" mb={6} color='#20265E'>Our Team</Text>
 
-                <SimpleGrid columns={{ base: 1, sm: 2,  md: 3 }} spacing={10} justifyContent="center" >
+                <SimpleGrid columns={{ base: 1, sm: 2,  md: 3 }} spacing={10} justifyContent="center" alignItems="center" w="100%" >
                     {committeeMembers.map((member) => (
                         <VStack key={member.name} spacing={4} align="center">
                             <Image
@@ -290,6 +289,7 @@ export default function HomePage() {
                                 src={member.image}
                                 alt={member.name}
                                 objectFit='cover'
+                                alignItems = 'center'
                             />
                             <Text fontWeight="bold">{member.name}</Text>
                             <Text color="gray.500">{member.position}</Text>

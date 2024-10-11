@@ -8,7 +8,7 @@ const navItems = [
   { path: "/", label: "Home" },
   { path: "/about-us", label: "About Us" },
   // Events will now link to an external website
-  { path: "https://www.eusa.ed.ac.uk/activities/view/edinburghentrepreneurs?ref=conversationalainews.com", label: "Events", isExternal: true },
+  { path: "https://www.instagram.com/edentsoc/", label: "Events", isExternal: true },
   { path: "/contact-us", label: "Contact Us" },
 ];
 
@@ -142,10 +142,10 @@ const Navbar = () => {
 
               {/* Social Media Icons for Mobile (At the bottom) */}
               <Flex mt="auto" justify="center" pb={6}>
-                <Link href="https://www.instagram.com/your_instagram_profile" isExternal>
+                <Link href="https://www.instagram.com/edentsoc/" isExternal>
                   <Icon as={FaInstagram} boxSize={6} mr={4} color="#20265E" _hover={{ color: "gray.500" }} />
                 </Link>
-                <Link href="https://www.linkedin.com/in/your_linkedin_profile" isExternal>
+                <Link href="https://www.linkedin.com/company/edentsoc/" isExternal>
                   <Icon as={FaLinkedin} boxSize={6} color="#20265E" _hover={{ color: "gray.500" }} />
                 </Link>
               </Flex>
