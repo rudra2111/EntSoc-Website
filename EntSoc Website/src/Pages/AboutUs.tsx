@@ -38,11 +38,13 @@ const AboutUs = () => {
 
   return (
     <Box
-      maxW="1200px"
       mx="auto"
       p={{ base: 4, md: 8 }}
       my={8}
       mt={16} 
+      alignItems='center' 
+      justifyContent='center' 
+      width="100vw"
     >
       <Flex direction={{ base: 'column', md: 'row' }}>
 

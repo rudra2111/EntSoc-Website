@@ -49,7 +49,7 @@ const ContactUs = () => {
   };
 
   return (
-    <Box display="flex" justifyContent="center" alignItems="center" minH="100vh" p={4}>
+    <Box display="flex" justifyContent="center" alignItems="center" minH="100vh" width="100vw" p={4}>
       <Box mt={{ base: "4rem", md: "8rem" }} mb="6" maxW="600px" width="100%" textAlign="center">
         <Heading as="h1" size="xl" mb="4">
           Contact Us

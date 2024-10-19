@@ -128,7 +128,7 @@ export default function HomePage() {
 
     return (
 
-        <Box>
+        <Box alignItems='center' justifyContent='center' width="100vw">
             <Box
                 position="relative"
                 minHeight={{ base: "100vh", md: "100vh" }}  
@@ -169,12 +169,12 @@ export default function HomePage() {
             </Box>
 
 
-            <Box display='flex' alignItems='center' justifyContent='center' w='100%' p={8}>
+            <Box display='flex' alignItems='center' justifyContent='center' width="100vw" p={8}>
                 <Box 
                     p={{ base: 6, md: 10 }}  
                     bg="gray.100"  
                     textAlign="center"
-                    mt={12}  
+                    mt={12}
                     borderRadius="md"  
                     boxShadow="lg"  
                     maxW="6xl"  
@@ -276,6 +276,7 @@ export default function HomePage() {
                 mx="auto"  
                 mt={12}  
                 maxW="90%"  
+                width="100vw"
 
             >
                 <Text fontSize="2xl" fontWeight="bold" mb={6} color='#20265E'>Our Team</Text>
