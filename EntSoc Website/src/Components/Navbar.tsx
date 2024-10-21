@@ -8,7 +8,7 @@ const navItems = [
   { path: "/", label: "Home" },
   { path: "/about-us", label: "About Us" },
   // Events will now link to an external website
-  { path: "https://www.instagram.com/edentsoc/", label: "Events", isExternal: true },
+  { path: "https://www.instagram.com/edentsoc/?hl=en", label: "Events", isExternal: true },
   { path: "/contact-us", label: "Contact Us" },
 ];
 
@@ -92,7 +92,7 @@ const Navbar = () => {
         </Flex>
 
         <Flex display={{ base: 'none', md: 'flex' }} ml="auto" align="center">
-          <Link href="https://www.instagram.com/edentsoc/" isExternal>
+          <Link href="https://www.instagram.com/edentsoc/?hl=en" isExternal>
             <Icon as={FaInstagram} boxSize={6} mr={4} color="#20265E" _hover={{ color: "gray.500" }} />
           </Link>
           <Link href="https://www.linkedin.com/company/edentsoc/" isExternal>
@@ -142,7 +142,7 @@ const Navbar = () => {
 
               {/* Social Media Icons for Mobile (At the bottom) */}
               <Flex mt="auto" justify="center" pb={6}>
-                <Link href="https://www.instagram.com/edentsoc/" isExternal>
+                <Link href="https://www.instagram.com/edentsoc/?hl=en" isExternal>
                   <Icon as={FaInstagram} boxSize={6} mr={4} color="#20265E" _hover={{ color: "gray.500" }} />
                 </Link>
                 <Link href="https://www.linkedin.com/company/edentsoc/" isExternal>
