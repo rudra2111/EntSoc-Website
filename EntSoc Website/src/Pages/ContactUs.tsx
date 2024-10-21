@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Button, Checkbox, FormControl, FormLabel, Heading, Input, Link, Select, Textarea, VStack } from '@chakra-ui/react';
 import emailjs from 'emailjs-com';
 
 const ContactUs = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}, []); 
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',

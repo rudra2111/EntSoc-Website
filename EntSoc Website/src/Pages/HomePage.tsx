@@ -1,5 +1,6 @@
 import { Box, VStack, Text, Button, SimpleGrid, Image, Link, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, Flex } from '@chakra-ui/react';
 import Footer from '../Components/Footer';
+import { useEffect } from 'react';
 
 export default function HomePage() {
     const backgroundImageUrl = '/McEwanHall.jpg'; 
@@ -8,6 +9,10 @@ export default function HomePage() {
     const handleSignUpClick = () => {
         window.open(signUpUrl, '_blank');
     }
+
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, []); 
 
     const committeeMembers = [
         {
@@ -76,12 +81,7 @@ export default function HomePage() {
             image: "/George.png",
             linkedin: "https://www.linkedin.com/in/georgepatin/",
         },
-        {
-            name: "Shifa Ali",
-            position: "Community Manager",
-            image: "/Shifa.png",
-            linkedin: "https://www.linkedin.com/in/shifa27/",
-        },
+
         {
             name: "Celine Venusa",
             position: "Co-Head of REACH",
@@ -101,16 +101,22 @@ export default function HomePage() {
             linkedin: "https://www.linkedin.com/in/aislingekelly/",
         },
         {
-            name: "Palak Jain",
-            position: "Co-Head of Marketing",
-            image: "/Palak.jpeg",
-            linkedin: "https://www.linkedin.com/in/palakjaininedinburgh/",
-        },
-        {
             name: "Ermioni Vasileiadou",
             position: "Co-Head of Marketing",
             image: "/Hermi.png",
             linkedin: "https://www.linkedin.com/in/ermioni-vasileiadou-b303b4314/",
+        },
+        {
+            name: "Shifa Ali",
+            position: "Co-Head of Marketing",
+            image: "/Shifa.png",
+            linkedin: "https://www.linkedin.com/in/shifa27/",
+        },
+        {
+            name: "Anastasia McMillan",
+            position: "Social Secretary",
+            image: "/Anastasia.png",
+            linkedin: "https://www.linkedin.com/in/anastasia-mcmillan/",
         },
         {
             name: "Diana Georgievskaya",
@@ -118,12 +124,7 @@ export default function HomePage() {
             image: "/Diana.png",
             linkedin: "https://www.linkedin.com/in/diana-georgievskaya/",
         },
-        {
-            name: "Anastasia McMillan",
-            position: "Social Secretary",
-            image: "/Anastasia.png",
-            linkedin: "https://www.linkedin.com/in/anastasia-mcmillan/",
-        }
+
     ];
 
     return (

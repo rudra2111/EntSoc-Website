@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Box, Flex, Text, Image } from '@chakra-ui/react';
 import Footer from '../Components/Footer';
 
 const AboutUs = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' }); 
+}, []);
   const sections = [
     {
       title: "Speaker Events",
