@@ -42,7 +42,7 @@ export default function HomePage() {
         {
             name: "Karney Morgan-Cheng",
             position: "Vice-Chairperson",
-            image: "/Karney.png",
+            image: "/karney.png",
             linkedin: "https://www.linkedin.com/in/karney-morgan-cheng-8790711aa/",
         },
         {
@@ -73,7 +73,7 @@ export default function HomePage() {
             name: "Sophie Donkers",
             position: "Co-Head of SEN & VCP",
             image: "/Sophie.png",
-            linkedin: "www.linkedin.com/in/sophiedonkers",
+            linkedin: "https://www.linkedin.com/in/sophiedonkers",
         },
         {
             name: "George Patin",
@@ -92,7 +92,7 @@ export default function HomePage() {
             name: "Zhijian Zhang",
             position: "Co-Head of REACH",
             image: "/Zhijian.png",
-            linkedin: "https://www.linkedin.com/in/",
+            linkedin: "http://linkedin.com/in/rosie-zhang-37339a268",
         },
         {
             name: "Aisling Kelly",
@@ -121,7 +121,7 @@ export default function HomePage() {
         {
             name: "Diana Georgievskaya",
             position: "Social Secretary",
-            image: "/Diana.png",
+            image: "/diana.png",
             linkedin: "https://www.linkedin.com/in/diana-georgievskaya/",
         },
 

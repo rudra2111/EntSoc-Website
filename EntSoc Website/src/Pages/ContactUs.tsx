@@ -28,12 +28,6 @@ const ContactUs = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (!formData.termsAccepted) {
-      alert('Please accept the terms and conditions');
-      return;
-    }
-
     emailjs.send(
       'service_tyyrt3w',
       'template_b50lo3g',
@@ -43,6 +37,18 @@ const ContactUs = () => {
       (result) => {
         alert('Message sent successfully!');
         console.log(result.text);
+
+        setFormData({
+          firstName: '',
+          lastName: '',
+          companyName: '',
+          email: '',
+          phone: '',
+          subject: '',
+          enquiryType: '',
+          message: '',
+          termsAccepted: false
+        });
       },
       (error) => {
         alert('An error occurred. Please try again.');
@@ -101,11 +107,6 @@ const ContactUs = () => {
               <Textarea name="message" placeholder="Enter message" value={formData.message} onChange={handleChange} />
             </FormControl>
 
-            <FormControl isRequired>
-              <Checkbox name="termsAccepted" isChecked={formData.termsAccepted} onChange={handleChange}>
-                I have read and accepted the <Link href="/terms">Terms & Conditions</Link> and the <Link href="/privacy">Privacy notice</Link>.
-              </Checkbox>
-            </FormControl>
 
             <Button type="submit" colorScheme="blue" size="lg" w="full">
               Submit
