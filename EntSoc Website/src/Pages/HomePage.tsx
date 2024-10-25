@@ -53,13 +53,13 @@ export default function HomePage() {
         },
         {
             name: "Saumya Jindal",
-            position: "Speakers Coordinators",
+            position: "Speakers Coordinator",
             image: "/Saumya.png",
             linkedin: "https://www.linkedin.com/in/saumya-jindal-j17?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
         },
         {
             name: "Abylay Orazbek",
-            position: "Speakers Coordinators",
+            position: "Speakers Coordinator",
             image: "/Abylay.png",
             linkedin: "https://www.linkedin.com/in/abylay-orazbek-500593217/",
         },
