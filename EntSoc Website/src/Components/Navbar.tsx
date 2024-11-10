@@ -4,6 +4,7 @@ import { HamburgerIcon } from '@chakra-ui/icons';
 import { NavLink as RouterNavLink } from 'react-router-dom';  // Importing NavLink for internal navigation
 import { FaInstagram, FaLinkedin } from 'react-icons/fa';
 
+
 const navItems = [
   { path: "/", label: "Home" },
   { path: "/about-us", label: "About Us" },
@@ -37,10 +38,10 @@ const Navbar = () => {
       >
         {/* Clickable Logo Section */}
         <Flex align="center" mr={5}>
-          <RouterNavLink to="/">  {/* Make the logo clickable, links to home */}
+          <RouterNavLink to="/" aria-label="Go to Home page">  {/* Make the logo clickable, links to home */}
             <Image 
               src="/EntSoc_Logo.png" 
-              alt="Logo" 
+              alt="Edinburgh Entrepreneurs Society Logo" 
               height="auto"
               width={{ base: "150px", md: "300px" }}  // Responsive logo size for mobile and desktop
               objectFit="contain"
@@ -69,6 +70,7 @@ const Navbar = () => {
                 color="black"
                 _hover={{ textDecoration: 'none', borderBottom: '2px solid #20265E' }}
                 margin="0 10px"
+                aria-label={item.label}
               >
                 {item.label}
               </Link>
@@ -84,6 +86,8 @@ const Navbar = () => {
                   transition: 'border-bottom 0.3s ease',
                   margin: '0 10px',
                 })}
+                aria-current={item.path === window.location.pathname ? 'page' : undefined}
+                aria-label={item.label}
               >
                 {item.label}
               </RouterNavLink>
@@ -92,10 +96,10 @@ const Navbar = () => {
         </Flex>
 
         <Flex display={{ base: 'none', md: 'flex' }} ml="auto" align="center">
-          <Link href="https://www.instagram.com/edentsoc/?hl=en" isExternal>
+          <Link href="https://www.instagram.com/edentsoc/?hl=en" isExternal aria-label="Edinburgh Entrepreneurs on Instagram">
             <Icon as={FaInstagram} boxSize={6} mr={4} color="#20265E" _hover={{ color: "gray.500" }} />
           </Link>
-          <Link href="https://www.linkedin.com/company/edentsoc/" isExternal>
+          <Link href="https://www.linkedin.com/company/edentsoc/" isExternal aria-label="Edinburgh Entrepreneurs on LinkedIn">
             <Icon as={FaLinkedin} boxSize={6} color="#20265E" _hover={{ color: "gray.500" }} />
           </Link>
         </Flex>
@@ -105,7 +109,7 @@ const Navbar = () => {
       <Drawer isOpen={isDrawerOpen} placement="right" onClose={closeDrawer}>
         <DrawerOverlay />
         <DrawerContent>
-          <DrawerCloseButton />
+          <DrawerCloseButton aria-label="Close Navigation" />
           <DrawerBody>
             <VStack
               spacing={8}
@@ -125,6 +129,7 @@ const Navbar = () => {
                     fontSize="2xl"
                     color="#20265E"
                     onClick={closeDrawer}
+                    aria-label={item.label}
                   >
                     {item.label}
                   </Link>
@@ -134,6 +139,8 @@ const Navbar = () => {
                     key={item.label} 
                     onClick={closeDrawer}  // Close the drawer when a link is clicked
                     style={{ textDecoration: 'none', color: '#20265E' }}
+                    aria-current={item.path === window.location.pathname ? 'page' : undefined}
+                    aria-label={item.label}
                   >
                     {item.label}
                   </RouterNavLink>
@@ -142,10 +149,10 @@ const Navbar = () => {
 
               {/* Social Media Icons for Mobile (At the bottom) */}
               <Flex mt="auto" justify="center" pb={6}>
-                <Link href="https://www.instagram.com/edentsoc/?hl=en" isExternal>
+                <Link href="https://www.instagram.com/edentsoc/?hl=en" isExternal aria-label="Edinburgh Entrepreneurs on Instagram">
                   <Icon as={FaInstagram} boxSize={6} mr={4} color="#20265E" _hover={{ color: "gray.500" }} />
                 </Link>
-                <Link href="https://www.linkedin.com/company/edentsoc/" isExternal>
+                <Link href="https://www.linkedin.com/company/edentsoc/" isExternal aria-label="Edinburgh Entrepreneurs on LinkedIn">
                   <Icon as={FaLinkedin} boxSize={6} color="#20265E" _hover={{ color: "gray.500" }} />
                 </Link>
               </Flex>

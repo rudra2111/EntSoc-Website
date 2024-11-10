@@ -1,6 +1,7 @@
 import { Box, VStack, Text, Button, SimpleGrid, Image, Link, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, Flex } from '@chakra-ui/react';
 import Footer from '../Components/Footer';
 import { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 
 export default function HomePage() {
     const backgroundImageUrl = '/McEwanHall.jpg'; 
@@ -53,7 +54,7 @@ export default function HomePage() {
         },
         {
             name: "Saumya Jindal",
-            position: "Speakers Coordinator",
+            position: "Speakers Coordinators",
             image: "/Saumya.png",
             linkedin: "https://www.linkedin.com/in/saumya-jindal-j17?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
         },
@@ -130,6 +131,20 @@ export default function HomePage() {
     return (
 
         <Box alignItems='center' justifyContent='center' width="100vw">
+            <Helmet>
+                <title>Edinburgh Entrepreneurs Society - EntSoc</title>
+                <meta name="description" content="Edinburgh Entrepreneurs Society unites driven students passionate about entrepreneurship, providing impactful events, networking, and support to bring entrepreneurial visions to life at Edinburgh University." />
+                <meta name="keywords" content="Edinburgh Entrepreneurs, Entrepreneurs Society, Edinburgh University, student entrepreneurs, EntSoc, startup, business, networking, University of Edinburgh" />
+                <meta name="author" content="Edinburgh Entrepreneurs Society" />
+                <meta property="og:title" content="Edinburgh Entrepreneurs Society - EntSoc" />
+                <meta property="og:description" content="Join Edinburgh Entrepreneurs Society to connect with like-minded individuals, attend impactful events, and foster entrepreneurial skills." />
+                <meta property="og:image" content="/McEwanHall.jpg" />
+                <meta property="og:url" content="https://entsoc.uk" />
+                <meta name="twitter:title" content="Edinburgh Entrepreneurs Society - EntSoc" />
+                <meta name="twitter:description" content="Connecting and empowering student entrepreneurs at Edinburgh University through events, workshops, and networking." />
+                <meta name="twitter:image" content="/McEwanHall.jpg" />
+                <meta name="twitter:card" content="summary_large_image" />
+            </Helmet>
             <Box
                 position="relative"
                 minHeight={{ base: "100vh", md: "100vh" }}  
