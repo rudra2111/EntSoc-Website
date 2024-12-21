@@ -63,7 +63,7 @@ const ContactUs = () => {
         <Heading as="h1" size="xl" mb="4">
           Contact Us
         </Heading>
-        <Box as="form" onSubmit={handleSubmit} p={6} boxShadow="lg" borderRadius="md" bg="white" width="100%">
+        <Box as="form" onSubmit={handleSubmit} p={6} boxShadow="lg" borderRadius="md" bg="white" width="100%" border = "2px solid" borderColor = "blue.500">
           <VStack spacing={4}>
             {/* Form controls */}
             <FormControl isRequired>

@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import { Box, Flex, Image, Link, Icon, IconButton, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerBody, VStack } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import { NavLink as RouterNavLink } from 'react-router-dom';  // Importing NavLink for internal navigation
-import { FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaExternalLinkAlt, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 
 const navItems = [
   { path: "/", label: "Home" },
   { path: "/about-us", label: "About Us" },
-  // Events will now link to an external website
   { path: "https://www.instagram.com/edentsoc/?hl=en", label: "Events", isExternal: true },
   { path: "/contact-us", label: "Contact Us" },
 ];
@@ -21,6 +20,7 @@ const Navbar = () => {
 
   return (
     <>
+
       {/* Navbar */}
       <Flex
         as="nav"
@@ -43,7 +43,7 @@ const Navbar = () => {
               src="/EntSoc_Logo.png" 
               alt="Edinburgh Entrepreneurs Society Logo" 
               height="auto"
-              width={{ base: "150px", md: "300px" }}  // Responsive logo size for mobile and desktop
+              width={{ base: "150px", md: "200px" }}  // Responsive logo size for mobile and desktop
               objectFit="contain"
             />
           </RouterNavLink>
@@ -73,6 +73,7 @@ const Navbar = () => {
                 aria-label={item.label}
               >
                 {item.label}
+                <Icon as={FaExternalLinkAlt} ml={2} boxSize={4} color="gray.500" />
               </Link>
             ) : (
               <RouterNavLink 
@@ -132,6 +133,7 @@ const Navbar = () => {
                     aria-label={item.label}
                   >
                     {item.label}
+                    <Icon as={FaExternalLinkAlt} ml={2} boxSize={4} color="gray.500" />
                   </Link>
                 ) : (
                   <RouterNavLink 

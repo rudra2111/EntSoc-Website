@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Flex, Link, HStack, Icon, Image, Text } from '@chakra-ui/react';
-import { FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaExternalLinkAlt, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { useLocation } from 'react-router-dom';
 import { NavLink as RouterNavLink } from 'react-router-dom';
 
@@ -40,6 +40,7 @@ const Footer: React.FC = () => {
               }}
             >
               {item.label}
+              <Icon as={FaExternalLinkAlt} ml={2} boxSize={4} color="gray.500" />
             </Link>
           ) : (
             <RouterNavLink

@@ -19,7 +19,7 @@ export default function HomePage() {
         {
             name: "Rudra Jadav",
             position: "President",
-            image: "/Rudra Jadav.png",
+            image: "/Rudra.png",
             linkedin: "https://www.linkedin.com/in/rudrajadav",
         },
         {
