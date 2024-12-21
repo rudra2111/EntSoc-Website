@@ -185,7 +185,7 @@ export default function HomePage() {
             </Box>
 
 
-            <Box display='flex' alignItems='center' justifyContent='center' width="100vw" p={8}>
+            <Box display='flex' alignItems='center' justifyContent='center' width="100vw" p={4}>
                 <Box 
                     p={{ base: 6, md: 10 }}  
                     bg="gray.100"  
