@@ -53,12 +53,6 @@ export default function HomePage() {
             linkedin: "https://www.linkedin.com/in/edna-frimpong/",
         },
         {
-            name: "Yelisaveta Rennie",
-            position: "Head of Speakers",
-            image: "/Yelisaveta Rennie.jpeg",
-            linkedin: "https://www.linkedin.com/in/yelisaveta-rennie-539718237/",
-        },
-        {
             name: "Nazrin Babayeva",
             position: "Sponsorship Coordinator",
             image: "/Nazrin Babayeva.jpeg",
